@@ -1,9 +1,9 @@
-const express = require("express");
-const { Pool } = require("pg");
+import "dotenv/config";
+import express from "express";
+import { Pool } from "pg";
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Postgres connection using Heroku's DATABASE_URL
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false }, // Required for Heroku Postgres
